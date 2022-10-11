@@ -1,5 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
+export const Main = styled.main`
+    padding-left:30px;
+`
 export const Ul = styled.ul`
     display: flex;
     flex-direction: column;
@@ -11,12 +14,4 @@ export const Li = styled.li`
         text-decoration: underline;
     }
 
-`
-
-export const HomeTitle = styled.h1`
-    margin-bottom: 20px;
-`
-
-export const Main = styled.main`
-    padding-left:30px;
 `

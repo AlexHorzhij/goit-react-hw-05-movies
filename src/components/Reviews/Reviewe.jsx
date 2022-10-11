@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getReviewsById } from '../../services/ApiServise';
+import { Li, Author, Text } from './Reviews.styled';
 
 export const Reviewe = () => {
     const { id } = useParams();
@@ -15,8 +16,10 @@ export const Reviewe = () => {
         console.log(reviewe)
         return (
             <ul>
-                <li>ttttttttttttttt</li>
+                {reviewe.results.map(item => <Li key={item.id}><Author>Author: {item.author_details.username}</Author>
+                <Text>{item.content}</Text> </Li>)
+                }
             </ul>
         )
-    }
+    };
 };

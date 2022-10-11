@@ -47,10 +47,14 @@ export async function getReviewsById(movie_id) {
         }
 };
 
-// https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1
-
-// https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=<<api_key>>&language=en-US
-
-
-
-// https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
+export async function getSearchMovies(query) {
+    if(!query){return} 
+      try {
+            const response = await axios.get(
+                `${BASE_URL}search/movie?api_key=${KEY}&language=en-US&query=${query}&page=1`
+            );
+            return response.data;
+        } catch (error) {
+            console.error(error);
+        }
+};

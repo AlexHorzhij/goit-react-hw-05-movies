@@ -8,18 +8,30 @@ import { NavLink } from "react-router-dom";
 //     align-items: flex-start;
 // `
 
-// export const Header = styled.header`
-//     display: flex;
-//     padding: 15px;
-//     font-size: 20px;
-//     background-color: beige;
-// `
+export const HeaderBox = styled.header`
+    display: flex;
+    /* padding: 15px; */
+    font-size: 20px;
+    border-bottom: 1px solid gray; 
+    margin-bottom: 20px;
+    padding-left: 10px;
+`
 
 export const StyledLink = styled(NavLink)`
+    font-weight: 500;
     display: flex;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 5px;
+    padding: 20px;
+    color: black;
+    /* border: 1px solid black;
+    border-radius: 5px; */
+    :hover{
+        background-color: beige;
+        color: red;
+    };
+    &.active{
+             color: red;
+   
+    }
 `
 
 export const Nav = styled.nav`

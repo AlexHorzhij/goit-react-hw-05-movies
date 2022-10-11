@@ -1,28 +1,24 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import {getTrending} from '../../services/ApiServise'
-// const axios = require('axios').default;
-import { Ul } from './Home.styled';
+import { Link, useLocation } from 'react-router-dom';
+import { getTrending } from '../../services/ApiServise';
+import { Ul, HomeTitle, Main, Li } from './Home.styled';
 
 
-export default function Home() {
-    const [movies, setMovies] = useState([]);
+export const Home = () => {
+    const [movies, setMovies] = useState(null);
+    const location = useLocation()
     
     useEffect(() => {
         getTrending().then(setMovies)
     }, []
     );
 
-    console.log(movies)
-    const { results } = movies;
-    console.log(results)
-
     return (
-        <main>
-            <h1>Trending today</h1>
+        <Main>
+            <HomeTitle>Trending today</HomeTitle>
             <Ul>
-                {results && results.map(movie => (<li key={movie.id}><Link to={`movies/${movie.id}`}>{movie.title}</Link></li>))}
+                {movies && movies.results.map(movie => (<Li key={movie.id}><Link to={`movies/${movie.id}`} state={{ from: location }}>{movie.title}</Link></Li>))}
             </Ul>
-        </main>
+        </Main>
     );
 };
