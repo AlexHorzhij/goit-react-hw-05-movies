@@ -1,18 +1,22 @@
 import { Input, Button, Form } from './Form.styled';
 import PropTypes from 'prop-types';
 
-export const SearchForm = ({ getSearchMove }) => {
+export const SearchForm = ({ searchMove, changeFilter, filter }) => {
 
-    const hendleSub = (e) => {
+    const handleSub = (e) => {
         e.preventDefault()
         const form = e.target;
-        getSearchMove(form.elements.search.value)
-        // form.reset()
+        searchMove(form.elements.search.value)
+        console.log("Submit", form.elements.search.value)
+    };
+
+    const handleChange = (e) => {
+        changeFilter(e.target.value)
     };
 
     return (
-        <Form action="" onSubmit={hendleSub} >
-            <Input type="text" name='search' />
+        <Form action=""  onSubmit={handleSub}>
+            <Input type="text" name='search' value={filter} onChange={handleChange}/>
             <Button>Submit</Button>
         </Form>
     )

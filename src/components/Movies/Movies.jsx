@@ -7,21 +7,33 @@ import { Main, Ul, Li } from './Movies.styled';
 export const Movies = () => {
     const [query, setQuery] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
+    const [searchMovie, setSearchMovie] = useState('');
     const location = useLocation();
+    const filter = searchParams.get('query') ? searchParams.get('query') : '';
 
     useEffect(() => {
-        const searchQuery = searchParams.get('query')
-        getSearchMovies(searchQuery).then(setQuery)
-    }, [searchParams]
+        setSearchMovie(filter)
+        // eslint-disable-next-line
+    }, []
     );
+
+    useEffect(() => {
+        getSearchMovies(searchMovie).then(setQuery)
+    }, [searchMovie]
+    );
+
+    const searchMove = (value) => {
+        setSearchMovie(value);
+    }
     
-    const getSearchMove = (value) => {
+    const changeFilter = (value) => {
         setSearchParams(!value ? '' : { query: value });
     };
+
     if (query) console.log(query)
     return (
         <Main>
-            <SearchForm getSearchMove={getSearchMove} />
+            <SearchForm changeFilter={changeFilter} searchMove={searchMove} filter={filter} />
             <Ul>
                 {query && query.results.map(movie =>
                     (<Li key={movie.id}><Link to={`${movie.id}`} state={{ from: location }}>{movie.title}</Link></Li>))
