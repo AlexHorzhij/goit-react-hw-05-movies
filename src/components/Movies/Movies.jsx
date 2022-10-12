@@ -7,15 +7,9 @@ import { Main, Ul, Li } from './Movies.styled';
 export const Movies = () => {
     const [query, setQuery] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
-    const [searchMovie, setSearchMovie] = useState('');
-    const location = useLocation();
     const filter = searchParams.get('query') ? searchParams.get('query') : '';
-
-    useEffect(() => {
-        setSearchMovie(filter)
-        // eslint-disable-next-line
-    }, []
-    );
+    const [searchMovie, setSearchMovie] = useState(filter ?? '');
+    const location = useLocation();
 
     useEffect(() => {
         getSearchMovies(searchMovie).then(setQuery)
