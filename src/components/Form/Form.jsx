@@ -7,7 +7,6 @@ export const SearchForm = ({ searchMove, changeFilter, filter }) => {
         e.preventDefault()
         const form = e.target;
         searchMove(form.elements.search.value)
-        console.log("Submit", form.elements.search.value)
     };
 
     const handleChange = (e) => {

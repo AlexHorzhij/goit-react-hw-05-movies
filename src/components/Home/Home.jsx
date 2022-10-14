@@ -4,7 +4,7 @@ import { getTrending } from '../../services/ApiServise';
 import { Ul, HomeTitle, Main, Li } from './Home.styled';
 
 
-export const Home = () => {
+export default function Home(){
     const [movies, setMovies] = useState(null);
     const location = useLocation()
     

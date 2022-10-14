@@ -4,7 +4,7 @@ import { getMovieById } from "services/ApiServise";
 import { InfoContainer, AddContainer } from "./MovieDetails.styled";
 import { Main, BackButtonLink, IoArrowUndoOutlineM, FilmTitle, Title, Text, Li, ImgContainer } from './MovieDetails.styled';
 
-export const MovieDetails = () => {
+export default function MovieDetails(){
     const [film, setFilm] = useState(null);
     const { id } = useParams();
     const location = useLocation();

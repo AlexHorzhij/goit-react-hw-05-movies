@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getReviewsById } from '../../services/ApiServise';
 import { Li, Author, Text } from './Reviews.styled';
 
-export const Reviewe = () => {
+export default function Reviewe(){
     const { id } = useParams();
     const [reviewe, setReviewe] = useState(null);
 

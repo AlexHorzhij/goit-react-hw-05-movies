@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getCreditsById } from '../../services/ApiServise';
 import { Img, Li, Name } from './Cast.styled';
 
-export const Cast = () => {
+export default function Cast(){
     const [credits, setCredits] = useState(null);
     const { id } = useParams();
 

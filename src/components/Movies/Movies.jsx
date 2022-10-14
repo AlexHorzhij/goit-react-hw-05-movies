@@ -4,11 +4,11 @@ import { getSearchMovies } from '../../services/ApiServise';
 import { useState, useEffect } from "react";
 import { Main, Ul, Li } from './Movies.styled';
 
-export const Movies = () => {
+export default function Movies(){
     const [query, setQuery] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
     const filter = searchParams.get('query') ? searchParams.get('query') : '';
-    const [searchMovie, setSearchMovie] = useState(filter ?? '');
+    const [searchMovie, setSearchMovie] = useState(filter);
     const location = useLocation();
 
     useEffect(() => {
