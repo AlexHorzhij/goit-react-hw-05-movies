@@ -1,18 +1,10 @@
 import styled from 'styled-components';
 import { NavLink } from "react-router-dom";
 
-
-// export const Container = styled.div`
-//     display: flex;
-//     justify-content: start;
-//     align-items: flex-start;
-// `
-
 export const HeaderBox = styled.header`
     display: flex;
-    /* padding: 15px; */
     font-size: 20px;
-    border-bottom: 1px solid gray; 
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
     padding-left: 10px;
 `
@@ -22,18 +14,14 @@ export const StyledLink = styled(NavLink)`
     display: flex;
     padding: 20px;
     color: black;
-    /* border: 1px solid black;
-    border-radius: 5px; */
     :hover{
-        background-color: beige;
-        color: red;
+        background-color: rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.05);
     };
     &.active{
-             color: red;
-   
+        color: red;
     }
 `
-
 export const Nav = styled.nav`
     display: flex;
     gap: 20px;

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Outlet, useParams, Link, useLocation } from "react-router-dom";
 import { getMovieById } from "services/ApiServise";
 import { InfoContainer, AddContainer } from "./MovieDetails.styled";
-import { Main, BackButtonLink, IoArrowUndoOutlineM, FilmTitle, Title, Text, Li, ImgContainer } from './MovieDetails.styled';
+import { BackButtonLink, IoArrowUndoOutlineM, FilmTitle, Title, Text, Li, ImgContainer } from './MovieDetails.styled';
 
 export default function MovieDetails(){
     const [film, setFilm] = useState(null);
@@ -25,7 +25,7 @@ export default function MovieDetails(){
     const placeholder = '/kqjL17yufvn9OVLyXYpvtyrFfak.jpg';
     const genresFilm = film.genres.map(a => a.name)
     return (
-        <Main>
+        <main>
             <BackButtonLink to={from}><IoArrowUndoOutlineM />Go back</BackButtonLink>
             <InfoContainer>
                 <ImgContainer>
@@ -52,6 +52,6 @@ export default function MovieDetails(){
                 </ul>
             </AddContainer>
             <Outlet />
-        </Main>
+        </main>
     )
 };
