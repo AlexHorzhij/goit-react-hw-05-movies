@@ -9,13 +9,14 @@ const Container = styled.div`
     height: 100vh;
 `
 
-export default function Loading() {
+export default function Loading({ r }) {
+    console.log(r)
     return (
         <Container>
             <Circles
           height="80"
           width="80"
-          color="#4fa94d"
+          color="gray"
           ariaLabel="circles-loading"
           wrapperStyle={{}}
           wrapperClass=""

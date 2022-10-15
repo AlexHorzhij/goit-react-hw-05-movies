@@ -7,60 +7,60 @@ export const ImgContainer = styled.div`
 `
 export const InfoContainer = styled.div`
     display: flex;
-    gap: 20px;
-    padding: 15px 0px;
-    padding-left:30px;
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    gap: ${p=>p.theme.space[4]}px;
+    padding-top: ${p => p.theme.space[4]}px;
+    padding-bottom: ${p=>p.theme.space[4]}px;
+    padding-left:${p => p.theme.space[5]}px;
+    box-shadow: 5px 5px 5px 1px ${p=>p.theme.colors.shadow};
 `
 
 export const AddContainer = styled.div`
-    padding: 15px 0px;
-    margin-bottom: 20px;
-    padding-left:30px;
-    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+    padding-top: ${p => p.theme.space[5]}px;
+    padding-bottom: ${p=>p.theme.space[4]}px;
+    padding-left:${p=>p.theme.space[5]}px;
+    box-shadow: 5px 5px 5px 1px ${p=>p.theme.colors.shadow};
 `
 
 export const BackButtonLink = styled(NavLink)`
     display: inline-flex;
     align-items: center;
-    /* border-bottom: 1px solid gray; */
     padding: 4px 10px 4px 6px;
-    font-size: 1.17em;
-    font-weight: 500;
-    margin-left: 30px;
+    font-size: ${p=>p.theme.fontSize.m};
+    font-weight: ${p=>p.theme.fontWeight.normal};
+    margin-left: ${p=>p.theme.space[5]}px;
     
     :hover{
-        background-color: rgba(0, 0, 0, 0.1);
-        box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
-    }
+        background-color: ${p=>p.theme.colors.hover};
+        box-shadow: 1px 1px 5px 5px ${p=>p.theme.colors.hover};
+    };
 `
 
 export const IoArrowUndoOutlineM = styled(IoArrowUndoOutline)`
-    margin-right: 8px;
+    margin-right: ${p=>p.theme.space[3]}px;
     width: 30px;
     height: 20px;
 `
 
 export const FilmTitle = styled.h2`
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    font-size: ${p=>p.theme.fontSize.l};
+    margin-bottom: ${p=>p.theme.space[4]}px;
 `
 
 export const Title = styled.h3`
-    font-size: 1.17em;
-    margin-bottom: 20px;
+    font-size: ${p=>p.theme.fontSize.m};
+    margin-bottom: ${p=>p.theme.space[4]}px;
 `
 
 export const Text = styled.p`
-    font-size: 1em;
-    margin-bottom: 20px;
+    font-size: ${p=>p.theme.fontSize.s};
+    margin-bottom: ${p=>p.theme.space[4]}px;
     line-height: 1.5;
 `
 
 export const Li = styled.li`
-    margin-bottom: 10px;
+    margin-bottom: ${p=>p.theme.space[3]}px;
 
     :hover{
         text-decoration: underline;
-    }
+    };
 `

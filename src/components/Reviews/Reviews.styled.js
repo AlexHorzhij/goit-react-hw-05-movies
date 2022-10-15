@@ -15,3 +15,8 @@ export const Text = styled.p`
 export const Placeholder = styled.p`
     padding-left: 30px;
 `;
+
+export const ReviewsWrapper = styled.ul`
+    padding-left:${p => p.theme.space[5]}px;
+    padding-top:${p=>p.theme.space[5]}px;
+`
