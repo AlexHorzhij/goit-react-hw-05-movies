@@ -1,5 +1,5 @@
 import { useSearchParams, Link, useLocation } from "react-router-dom";
-import { SearchForm } from '../Form/Form';
+import { SearchForm } from '../../components/Form/Form';
 import { getSearchMovies } from '../../services/ApiServise';
 import { useState, useEffect } from "react";
 import { Main, Ul, Li } from './Movies.styled';
@@ -24,7 +24,7 @@ export default function Movies(){
         setSearchParams(!value ? '' : { query: value });
     };
 
-    if (query) console.log(query)
+    if (query) 
     return (
         <Main>
             <SearchForm changeFilter={changeFilter} searchMove={searchMove} filter={filter} />

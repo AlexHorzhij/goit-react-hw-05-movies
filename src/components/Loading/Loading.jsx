@@ -9,8 +9,8 @@ const Container = styled.div`
     height: 100vh;
 `
 
-export default function Loading({ r }) {
-    console.log(r)
+export default function Loading() {
+
     return (
         <Container>
             <Circles
